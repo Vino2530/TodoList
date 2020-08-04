@@ -1,0 +1,33 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <div class="jumbotron">
+                <h4>Are you sure you want to delete {{ item }}?</h4>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <a class="btn btn-info" href="{% url 'list' %}">Cancel</a>
+                    <input class="btn btn-danger" type="submit"  name="Confirm">
+                </form>
+            </div>
+
+        </div>
+    </center>
+
+</body>
+
+</html>
