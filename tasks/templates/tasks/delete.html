@@ -17,7 +17,7 @@
         <div class="container">
             <div class="jumbotron">
                 <h4>Are you sure you want to delete {{ item }}?</h4>
-
+                <br>
                 <form method="POST">
                     {% csrf_token %}
                     <a class="btn btn-info" href="{% url 'list' %}">Cancel</a>
